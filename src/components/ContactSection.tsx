@@ -1,9 +1,44 @@
 
-import React, { useState } from 'react';
+import React from 'react';
+import { Mail, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
+
+const contactMethods = [
+  {
+    icon: Mail,
+    label: 'Email',
+    value: 'hello@digitalcraftsman.com',
+    href: 'mailto:hello@digitalcraftsman.com'
+  },
+  {
+    icon: Phone,
+    label: 'Phone',
+    value: '+1 (555) 123-4567',
+    href: 'tel:+15551234567'
+  }
+];
+
+const socialLinks = [
+  {
+    icon: Linkedin,
+    label: 'LinkedIn',
+    href: 'https://linkedin.com/in/digitalcraftsman',
+    color: 'hover:text-blue-500'
+  },
+  {
+    icon: Twitter,
+    label: 'Twitter',
+    href: 'https://twitter.com/digitalcraftsman',
+    color: 'hover:text-blue-400'
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    href: 'https://instagram.com/digitalcraftsman',
+    color: 'hover:text-pink-500'
+  }
+];
 
 const ContactSection = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -12,79 +47,69 @@ const ContactSection = () => {
             Let's <span className="text-gradient">Connect</span>
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Ready to bring your vision to life? Let's discuss your next project
+            Ready to bring your vision to life? Reach out through any of these channels
           </p>
         </div>
         
-        <div className="max-w-2xl mx-auto">
-          <div className="glass-morphism p-8 rounded-3xl space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Name</label>
-                <input 
-                  type="text"
-                  className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-                  placeholder="Your name"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-sm font-medium text-muted-foreground">Email</label>
-                <input 
-                  type="email"
-                  className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-                  placeholder="your@email.com"
-                />
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Subject</label>
-              <input 
-                type="text"
-                className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300"
-                placeholder="Project discussion"
-              />
-            </div>
-            
-            <div className="space-y-2">
-              <label className="text-sm font-medium text-muted-foreground">Message</label>
-              <textarea 
-                rows={5}
-                className="w-full px-4 py-3 bg-muted border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary transition-all duration-300 resize-none"
-                placeholder="Tell me about your project..."
-              />
-            </div>
-            
-            <button 
-              className="w-full btn-glow glass-morphism py-4 rounded-xl text-lg font-semibold text-primary border border-primary/20 hover:scale-[1.02] transition-all duration-300 relative overflow-hidden group"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            >
-              <span className="relative z-10">Send Message</span>
-              <div className={`absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-electric-cyan/10 transition-opacity duration-300 ${isHovered ? 'opacity-100' : 'opacity-0'}`} />
-            </button>
+        <div className="max-w-4xl mx-auto">
+          {/* Contact Methods */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {contactMethods.map((method, index) => {
+              const IconComponent = method.icon;
+              return (
+                <a
+                  key={method.label}
+                  href={method.href}
+                  className="glass-morphism p-8 rounded-3xl hover:scale-105 transition-all duration-300 group block"
+                  style={{ animationDelay: `${index * 150}ms` }}
+                >
+                  <div className="flex items-center space-x-6">
+                    <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+                      <IconComponent className="w-8 h-8 text-primary" />
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-space text-xl font-semibold mb-2">{method.label}</h3>
+                      <p className="text-muted-foreground">{method.value}</p>
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
           </div>
           
-          {/* Alternative contact methods */}
-          <div className="mt-12 flex justify-center space-x-8">
-            <a 
-              href="mailto:hello@example.com"
-              className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-            >
-              <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                <span className="text-sm">✉</span>
-              </div>
-              <span className="text-sm font-medium">hello@example.com</span>
-            </a>
-            <a 
-              href="#"
-              className="flex items-center space-x-2 text-muted-foreground hover:text-primary transition-colors duration-300 group"
-            >
-              <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
-                <span className="text-sm">🐦</span>
-              </div>
-              <span className="text-sm font-medium">@username</span>
-            </a>
+          {/* Social Media */}
+          <div className="text-center">
+            <h3 className="font-space text-2xl font-semibold mb-8">Follow Me</h3>
+            <div className="flex justify-center space-x-6">
+              {socialLinks.map((social, index) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`glass-morphism p-4 rounded-2xl hover:scale-110 transition-all duration-300 group ${social.color}`}
+                    style={{ animationDelay: `${(index + 2) * 150}ms` }}
+                  >
+                    <IconComponent className="w-6 h-6" />
+                    <span className="sr-only">{social.label}</span>
+                  </a>
+                );
+              })}
+            </div>
+          </div>
+          
+          {/* Call to Action */}
+          <div className="text-center mt-12">
+            <div className="glass-morphism p-6 rounded-3xl max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg">
+                Available for freelance projects and collaborations
+              </p>
+              <p className="text-primary font-semibold mt-2">
+                Let's create something amazing together
+              </p>
+            </div>
           </div>
         </div>
       </div>
