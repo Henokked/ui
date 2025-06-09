@@ -1,39 +1,46 @@
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { Code, Palette, Zap, Target, Briefcase, Star } from 'lucide-react';
 
 const skills = [
-  { name: 'UI/UX Design', level: 95, icon: '🎨' },
-  { name: 'Frontend Development', level: 90, icon: '💻' },
-  { name: 'Creative Direction', level: 85, icon: '🎭' },
-  { name: 'Prototyping', level: 88, icon: '⚡' },
-  { name: 'Brand Identity', level: 82, icon: '🎯' },
-  { name: 'Motion Graphics', level: 78, icon: '🎬' }
+  { name: 'UI/UX Design', description: 'Crafting intuitive user experiences', icon: Palette, level: 'Expert' },
+  { name: 'Frontend Development', description: 'Modern React & TypeScript', icon: Code, level: 'Advanced' },
+  { name: 'Creative Direction', description: 'Leading design visions', icon: Target, level: 'Expert' },
+  { name: 'Prototyping', description: 'Rapid concept validation', icon: Zap, level: 'Advanced' },
+  { name: 'Brand Identity', description: 'Visual storytelling & branding', icon: Star, level: 'Advanced' },
+  { name: 'Project Management', description: 'End-to-end delivery', icon: Briefcase, level: 'Proficient' }
 ];
 
-const SkillBar = ({ skill, delay }: { skill: typeof skills[0], delay: number }) => {
-  const [isVisible, setIsVisible] = useState(false);
+const getLevelColor = (level: string) => {
+  switch (level) {
+    case 'Expert':
+      return 'text-primary';
+    case 'Advanced':
+      return 'text-accent';
+    default:
+      return 'text-electric-cyan';
+  }
+};
 
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
+const SkillCard = ({ skill, index }: { skill: typeof skills[0], index: number }) => {
+  const IconComponent = skill.icon;
+  
   return (
-    <div className="space-y-3">
-      <div className="flex justify-between items-center">
-        <div className="flex items-center space-x-3">
-          <span className="text-2xl">{skill.icon}</span>
-          <span className="font-semibold">{skill.name}</span>
+    <div 
+      className="glass-morphism p-6 rounded-2xl hover:scale-105 transition-all duration-300 group"
+      style={{ animationDelay: `${index * 150}ms` }}
+    >
+      <div className="flex flex-col items-center text-center space-y-4">
+        <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
+          <IconComponent className="w-8 h-8 text-primary" />
         </div>
-        <span className="text-primary font-bold">{skill.level}%</span>
-      </div>
-      <div className="h-2 bg-muted rounded-full overflow-hidden">
-        <div 
-          className="h-full bg-gradient-to-r from-primary via-accent to-electric-cyan transition-all duration-1000 ease-out"
-          style={{
-            width: isVisible ? `${skill.level}%` : '0%'
-          }}
-        />
+        <div>
+          <h3 className="font-space text-xl font-semibold mb-2">{skill.name}</h3>
+          <p className="text-muted-foreground text-sm mb-3">{skill.description}</p>
+          <span className={`text-sm font-medium px-3 py-1 rounded-full bg-muted/50 ${getLevelColor(skill.level)}`}>
+            {skill.level}
+          </span>
+        </div>
       </div>
     </div>
   );
@@ -52,11 +59,9 @@ const SkillsSection = () => {
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
-            <div key={skill.name} className="glass-morphism p-6 rounded-2xl">
-              <SkillBar skill={skill} delay={index * 200} />
-            </div>
+            <SkillCard key={skill.name} skill={skill} index={index} />
           ))}
         </div>
       </div>
