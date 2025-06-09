@@ -71,7 +71,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
 
 const ProjectsSection = () => {
   return (
-    <section className="py-20 relative">
+    <section id="projects" className="py-20 relative">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-space text-4xl md:text-5xl font-bold mb-6">
