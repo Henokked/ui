@@ -12,7 +12,7 @@ const AboutSection = () => {
             </h2>
             <div className="space-y-3 text-muted-foreground text-lg leading-relaxed">
               <p>
-                I’m a UI/UX designer passionate about transforming ideas into meaningful digital experiences. With a strong focus on storytelling, user behavior, and visual clarity, I craft interfaces that are not only aesthetically engaging but also intuitive and purposeful. Whether it’s a landing page or a complex web app, I aim to design journeys that feel seamless, inspire interaction, and leave a lasting impression
+                I’m Henok a UI/UX designer passionate about transforming ideas into meaningful digital experiences. With a strong focus on storytelling, user behavior, and visual clarity, I craft interfaces that are not only aesthetically engaging but also intuitive and purposeful. Whether it’s a landing page or a complex web app, I aim to design journeys that feel seamless, inspire interaction, and leave a lasting impression
               </p>
               <p>
                 My work spans across UI/UX design, front-end development, and creative direction, 
