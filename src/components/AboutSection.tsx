@@ -10,11 +10,9 @@ const AboutSection = () => {
             <h2 className="font-space text-4xl md:text-5xl font-bold">
               About <span className="text-gradient">Me</span>
             </h2>
-            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+            <div className="space-y-3 text-muted-foreground text-lg leading-relaxed">
               <p>
-                I'm a digital craftsman passionate about creating exceptional user experiences 
-                that bridge the gap between imagination and reality. With a keen eye for detail 
-                and a love for innovative technology.
+                I’m a UI/UX designer passionate about transforming ideas into meaningful digital experiences. With a strong focus on storytelling, user behavior, and visual clarity, I craft interfaces that are not only aesthetically engaging but also intuitive and purposeful. Whether it’s a landing page or a complex web app, I aim to design journeys that feel seamless, inspire interaction, and leave a lasting impression
               </p>
               <p>
                 My work spans across UI/UX design, front-end development, and creative direction, 
@@ -23,34 +21,32 @@ const AboutSection = () => {
             </div>
             <div className="flex space-x-6">
               <div className="text-center">
-                <div className="text-3xl font-bold text-primary">5+</div>
+                <div className="text-3xl font-bold text-primary">3+</div>
                 <div className="text-sm text-muted-foreground">Years Experience</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent">50+</div>
+                <div className="text-3xl font-bold text-accent">20+</div>
                 <div className="text-sm text-muted-foreground">Projects Completed</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-electric-cyan">20+</div>
+                <div className="text-3xl font-bold text-electric-cyan">14+</div>
                 <div className="text-sm text-muted-foreground">Happy Clients</div>
               </div>
             </div>
           </div>
           
-          <div className="relative">
-            <div className="glass-morphism p-8 rounded-3xl relative">
-              {/* Futuristic avatar placeholder */}
-              <div className="w-64 h-64 mx-auto rounded-3xl bg-gradient-to-br from-primary/20 via-accent/20 to-electric-cyan/20 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent animate-gradient bg-[length:400%_400%]"></div>
-                <div className="absolute inset-4 border border-primary/30 rounded-2xl"></div>
-                <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                  <div className="w-16 h-16 bg-primary/30 rounded-full animate-pulse"></div>
-                </div>
-              </div>
-              {/* Holographic accent */}
-              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-accent to-electric-cyan rounded-full animate-glow"></div>
-            </div>
-          </div>
+         <div className="flex justify-center items-center">
+  <div className="relative w-64 h-64 rounded-full border-8 border-gradient-to-br from-primary via-accent to-electric-cyan overflow-hidden shadow-xl">
+    {/* Replace the src below with your profile image */}
+    <img
+      src="/profile.png"
+      alt="Profile"
+      className="w-full h-full object-cover rounded-full"
+    />
+    {/* Optional: Holographic accent */}
+    <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-accent to-electric-cyan rounded-full animate-glow"></div>
+  </div>
+</div>
         </div>
       </div>
     </section>

@@ -26,7 +26,7 @@ const Index = () => {
       <footer className="py-8 border-t border-border">
         <div className="container mx-auto px-6 text-center">
           <p className="text-muted-foreground text-sm">
-            © 2024 Digital Craftsman. Crafted with passion and precision.
+            © 2025 Henok Edmealem. Crafted with passion and precision.
           </p>
         </div>
       </footer>

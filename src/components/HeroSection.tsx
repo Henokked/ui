@@ -13,8 +13,8 @@ const HeroSection = () => {
   const downloadCV = () => {
     // Create a temporary link element to trigger download
     const link = document.createElement('a');
-    link.href = '/placeholder.svg'; // Replace with actual CV file path
-    link.download = 'Digital_Craftsman_CV.pdf';
+    link.href = '/Henok uiux.pdf'; // Replace with actual CV file path
+    link.download = 'Henok uiux.pdf';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -30,7 +30,7 @@ const HeroSection = () => {
             <span className="text-foreground">Craftsman</span>
           </h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto leading-relaxed">
-            Creating extraordinary digital experiences through innovative design and cutting-edge technology
+            Crafting clean, user-focused web experiences that blend function with style.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <button 

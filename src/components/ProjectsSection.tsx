@@ -3,31 +3,35 @@ import React from 'react';
 
 const projects = [
   {
-    title: 'Quantum Dashboard',
-    description: 'Next-generation analytics platform with AI-powered insights',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop',
-    tags: ['UI/UX', 'React', 'AI'],
+    title: 'Pulse Play',
+    description: 'A freindly mobile app offering wide variety of movies',
+    image: `/pulseplay.jpg`,
+    link : `https://www.behance.net/gallery/215565289/Pulse-Play-Movie-Streaming-App`,
+    tags: ['UI/UX', 'Ui', 'Mobile app'],
     color: 'from-primary to-accent'
   },
   {
-    title: 'Neural Interface',
-    description: 'Immersive VR experience design for brain-computer interaction',
-    image: 'https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop',
-    tags: ['VR/AR', 'Design', '3D'],
+    title: 'Sparex',
+    description: 'Your go to app for finding genuine spare parts fast, reliable, and hassle-free',
+    image: '/sparex.jpg',
+    link : `https://www.behance.net/gallery/165564311/Mobile-spare-part-app`,
+    tags: ['Mobile', 'Design', 'UI/UX'],
     color: 'from-accent to-electric-cyan'
   },
   {
-    title: 'Crypto Vault',
-    description: 'Secure cryptocurrency wallet with biometric authentication',
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-    tags: ['Fintech', 'Security', 'Mobile'],
+    title: 'Jera It Solutions',
+    description: 'A startup thats making world a better place',
+    image: `/jprofile.png`,
+    link: `https://www.behance.net/gallery/216917987/Startup-landing-page`,
+    tags: ['Fintech', 'Security', 'Website'],
     color: 'from-electric-cyan to-primary'
   },
   {
-    title: 'Smart Cities',
-    description: 'IoT management platform for urban infrastructure',
-    image: 'https://images.unsplash.com/photo-1483058712412-4245e9b90334?w=600&h=400&fit=crop',
-    tags: ['IoT', 'Data Viz', 'Smart City'],
+    title: 'Oozy ',
+    description: 'Your smart, personal AI assistant helping you organize tasks, answer questions, and stay productive effortlessly, all in one place.',
+    image: '/cover.jpg',
+    link: `https://www.behance.net/gallery/214964257/AI-app`,
+    tags: ['AI', 'Chat', 'App'],
     color: 'from-primary via-accent to-electric-cyan'
   }
 ];
@@ -35,6 +39,7 @@ const projects = [
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
   return (
     <div className="group relative overflow-hidden rounded-2xl glass-morphism hover:scale-105 transition-all duration-500">
+        <a href={project.link} target="_blank" rel="noopener noreferrer">
       <div className="aspect-video overflow-hidden">
         <img 
           src={project.image}
@@ -43,6 +48,7 @@ const ProjectCard = ({ project, index }: { project: typeof projects[0], index: n
         />
         <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
       </div>
+        </a>
       
       <div className="p-6 space-y-4">
         <h3 className="font-space text-xl font-bold group-hover:text-gradient transition-all duration-300">

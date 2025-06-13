@@ -1,42 +1,53 @@
 
 import React from 'react';
-import { Mail, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { FaBehance } from 'react-icons/fa';
+import { Mail, Phone, Linkedin, Github,} from 'lucide-react';
 
 const contactMethods = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@digitalcraftsman.com',
-    href: 'mailto:hello@digitalcraftsman.com'
+    value: 'henok0ed@gmail.com',
+    href: 'mailto:henok0ed@gmail.com'
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567'
-  }
+    value: '+251 920958682',
+    href: 'tel:+251 920958682'
+  },
+
+  
 ];
+
 
 const socialLinks = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/digitalcraftsman',
+    href: 'https://www.linkedin.com/in/henok-edmealem-21a976197/',
     color: 'hover:text-blue-500'
   },
-  {
-    icon: Twitter,
-    label: 'Twitter',
-    href: 'https://twitter.com/digitalcraftsman',
-    color: 'hover:text-blue-400'
+  
+ {
+    icon: FaBehance,
+    label: 'Behance',
+    href: 'https://www.behance.net/henok_ed', // Replace with your Behance URL
+    color: 'hover:text-blue-600',
   },
+
   {
-    icon: Instagram,
-    label: 'Instagram',
-    href: 'https://instagram.com/digitalcraftsman',
-    color: 'hover:text-pink-500'
-  }
+    icon: Github, // <-- Changed from Instagram to Github
+    label: 'GitHub',
+    href: 'https://github.com/Henokked', // <-- Update with your GitHub URL
+    color: 'hover:text-gray-500'
+  },
+ 
+  
+
+  
 ];
+
 
 const ContactSection = () => {
   return (

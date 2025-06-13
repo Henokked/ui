@@ -3,12 +3,12 @@ import React from 'react';
 import { Code, Palette, Zap, Target, Briefcase, Star } from 'lucide-react';
 
 const skills = [
-  { name: 'UI/UX Design', description: 'Crafting intuitive user experiences', icon: Palette, level: 'Expert' },
-  { name: 'Frontend Development', description: 'Modern React & TypeScript', icon: Code, level: 'Advanced' },
-  { name: 'Creative Direction', description: 'Leading design visions', icon: Target, level: 'Expert' },
-  { name: 'Prototyping', description: 'Rapid concept validation', icon: Zap, level: 'Advanced' },
-  { name: 'Brand Identity', description: 'Visual storytelling & branding', icon: Star, level: 'Advanced' },
-  { name: 'Project Management', description: 'End-to-end delivery', icon: Briefcase, level: 'Proficient' }
+  { name: 'UI/UX Design', description: 'Crafting intuitive user experiences', icon: Palette },
+  { name: 'Frontend Development', description: 'Modern React & TypeScript', icon: Code,  },
+  { name: 'Creative Direction', description: 'Leading design visions', icon: Target,  },
+  { name: 'Prototyping', description: 'Rapid concept validation', icon: Zap,  },
+  { name: 'Brand Identity', description: 'Visual storytelling & branding', icon: Star,  },
+  { name: 'Prototype', description: 'End-to-end delivery', icon: Briefcase, }
 ];
 
 const getLevelColor = (level: string) => {
@@ -27,10 +27,10 @@ const SkillCard = ({ skill, index }: { skill: typeof skills[0], index: number })
   
   return (
     <div 
-      className="glass-morphism p-6 rounded-2xl hover:scale-105 transition-all duration-300 group"
+      className="glass-morphism p-6 rounded-xl hover:scale-105 transition-all duration-300 group"
       style={{ animationDelay: `${index * 150}ms` }}
     >
-      <div className="flex flex-col items-center text-center space-y-4">
+      <div className="flex flex-col items-center text-center space-y-">
         <div className="p-4 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 group-hover:from-primary/30 group-hover:to-accent/30 transition-all duration-300">
           <IconComponent className="w-8 h-8 text-primary" />
         </div>
