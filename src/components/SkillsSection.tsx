@@ -4,7 +4,7 @@ import { Code, Palette, Zap, Target, Briefcase, Star } from 'lucide-react';
 
 const skills = [
   { name: 'UI/UX Design', description: 'Crafting intuitive user experiences', icon: Palette },
-  { name: 'Frontend Development', description: 'Modern React & TypeScript', icon: Code,  },
+  { name: 'Frontend Development', description: 'Modern React ', icon: Code,  },
   { name: 'Creative Direction', description: 'Leading design visions', icon: Target,  },
   { name: 'Prototyping', description: 'Rapid concept validation', icon: Zap,  },
   { name: 'Brand Identity', description: 'Visual storytelling & branding', icon: Star,  },

@@ -36,7 +36,7 @@ const AboutSection = () => {
           </div>
           
          <div className="flex justify-center items-center">
-  <div className="relative w-64 h-64 rounded-full border-8 border-gradient-to-br from-primary via-accent to-electric-cyan overflow-hidden shadow-xl">
+  <div className="relative w-64 h-50 rounded-full border-8 border-gradient-to-br from-primary via-accent to-electric-cyan overflow-hidden shadow-xl">
     {/* Replace the src below with your profile image */}
     <img
       src="/profile.png"
@@ -44,7 +44,7 @@ const AboutSection = () => {
       className="w-full h-full object-cover rounded-full"
     />
     {/* Optional: Holographic accent */}
-    <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-accent to-electric-cyan rounded-full animate-glow"></div>
+    {/* <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-to-br from-accent to-electric-cyan rounded-full animate-glow"></div> */}
   </div>
 </div>
         </div>
