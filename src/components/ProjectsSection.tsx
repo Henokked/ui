@@ -33,7 +33,16 @@ const projects = [
     link: `https://www.behance.net/gallery/214964257/AI-app`,
     tags: ['AI', 'Chat', 'App'],
     color: 'from-primary via-accent to-electric-cyan'
+  },
+  {
+    title: 'MyCampus',
+    description: 'an all-in-one mobile application designed to streamline and simplify the daily life of university students.',
+    image: '/main.png',
+    link: `https://www.behance.net/gallery/228512491/My-campus-Your-Campus-Companion`,
+    tags: ['University', 'Chat', 'App'],
+    color: 'from-primary via-accent to-electric-cyan'
   }
+
 ];
 
 const ProjectCard = ({ project, index }: { project: typeof projects[0], index: number }) => {
